@@ -19,6 +19,12 @@ class Tamagotchi {
 
 const tambo = new Tamagotchi("Tambo");
 
-const h1El =
-  document.getElementById("tamagotchi").firstElementChild.textContent;
-console.log(h1El);
+const rename = () => {
+  tambo.name = document.querySelector("input").value;
+  document.querySelector("input").value = "";
+  document.getElementById("tamagotchi").firstElementChild.textContent =
+    tambo.name;
+};
+
+const renameBtn = document.querySelector("button");
+renameBtn.addEventListener("click", rename);
