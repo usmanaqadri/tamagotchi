@@ -15,6 +15,9 @@ class Tamagotchi {
   play() {
     this.boredom--;
   }
+  getOlder() {
+    this.age++;
+  }
 }
 
 const tambo = new Tamagotchi("Tambo");
@@ -42,12 +45,17 @@ function rename() {
 
 // // UPDATING TAMOGATCHI STATS
 
+// Feeding your pet
+
 const feedBtn = document.getElementById("feed");
 feedBtn.addEventListener("click", () => {
   tambo.feed();
   document.getElementById("hunger").textContent = `Hunger: ${tambo.hunger}`;
   console.log(tambo);
 });
+
+// Putting pet to sleep
+
 const sleepBtn = document.getElementById("sleep");
 sleepBtn.addEventListener("click", () => {
   tambo.lightsOut();
@@ -55,8 +63,19 @@ sleepBtn.addEventListener("click", () => {
     "sleepiness"
   ).textContent = `Sleepiness: ${tambo.sleepiness}`;
 });
+
+// Playing with pet
+
 const playBtn = document.getElementById("play");
 playBtn.addEventListener("click", () => {
   tambo.play();
   document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
 });
+
+// // INCREASING PET'S AGE EVERY X MINUTES
+
+const getRandNum = () => Math.floor(Math.random() * 10) + 1;
+setInterval(() => {
+  tambo.getOlder();
+  document.getElementById("age").textContent = `Age: ${tambo.age}`;
+}, getRandNum() * 1000);
