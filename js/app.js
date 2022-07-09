@@ -84,41 +84,61 @@ playBtn.addEventListener("click", () => {
 // // INCREASING PET'S AGE EVERY X MINUTES
 
 const getRandNum = (target) => Math.floor(Math.random() * target) + 1;
-setInterval(() => {
+const ageInterval = setInterval(() => {
   tambo.getOlder();
   document.getElementById("age").textContent = `Age: ${tambo.age}`;
+  // // MORPHING PET A CERTAIN AGES
+
+  if (tambo.age === 3) {
+    alert(`${tambo.name} is evolving!`);
+    tambo.stage = 1;
+  }
+  if (tambo.stage === 1) {
+    //do something on the dom to transform how it looks
+  }
+
+  if (tambo.age === 8) {
+    alert(`${tambo.name} is evolving!`);
+    tambo.stage = 2;
+  }
+  if (tambo.stage === 2) {
+    //do something on the DOM to transform it
+  }
 }, getRandNum(3) * 1000 * 60);
 
-// // INCREASING PET'S HUNGER, SLEEPINESS, AND BOREDOM METRICS
-setInterval(() => {
+// // INCREASING PET'S HUNGER, SLEEPINESS, AND BOREDOM METRICS && KILLING TAMO IF STAT IS EQUAL TO 10
+const hungerInterval = setInterval(() => {
   tambo.hunger++;
   document.getElementById("hunger").textContent = `Hunger: ${tambo.hunger}`;
+  if (tambo.hunger === 10) {
+    clearInterval(boredomInterval);
+    clearInterval(hungerInterval);
+    clearInterval(sleepinessInterval);
+    clearInterval(ageInterval);
+    alert(`${tambo.name} has passed away due to your negligence`);
+  }
 }, getRandNum(10) * 1000);
-setInterval(() => {
+const sleepinessInterval = setInterval(() => {
   tambo.sleepiness++;
   document.getElementById(
     "sleepiness"
   ).textContent = `Sleepiness: ${tambo.sleepiness}`;
+  if (tambo.sleepiness === 10) {
+    clearInterval(boredomInterval);
+    clearInterval(hungerInterval);
+    clearInterval(sleepinessInterval);
+    clearInterval(ageInterval);
+    alert(`${tambo.name} has passed away due to your negligence`);
+  }
 }, getRandNum(10) * 1000);
-setInterval(() => {
+const boredomInterval = setInterval(() => {
   tambo.boredom++;
   document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
+  if (tambo.boredom === 10) {
+    clearInterval(boredomInterval);
+    clearInterval(hungerInterval);
+    clearInterval(sleepinessInterval);
+    clearInterval(ageInterval);
+    alert(`${tambo.name} has passed away due to your negligence`);
+  }
 }, getRandNum(10) * 1000);
-
-// // MORPHING PET A CERTAIN AGES
-
-if (tambo.age === 3) {
-  alert(`${tambo.name} is evolving!`);
-  tambo.stage = 1;
-}
-if (tambo.stage === 1) {
-  //do something on the dom to transform how it looks
-}
-
-if (tambo.age === 8) {
-  alert(`${tambo.name} is evolving!`);
-  tambo.stage = 2;
-}
-if (tambo.stage === 2) {
-  //do something on the DOM to transform it
-}
