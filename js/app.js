@@ -16,3 +16,9 @@ class Tamagotchi {
     this.boredom--;
   }
 }
+
+const tambo = new Tamagotchi("Tambo");
+
+const h1El =
+  document.getElementById("tamagotchi").firstElementChild.textContent;
+console.log(h1El);
