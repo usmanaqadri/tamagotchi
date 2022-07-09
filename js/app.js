@@ -116,6 +116,7 @@ const hungerInterval = setInterval(() => {
     clearInterval(hungerInterval);
     clearInterval(sleepinessInterval);
     clearInterval(ageInterval);
+    document.querySelector("img").classList.remove("move");
     alert(`${tambo.name} has passed away due to your negligence`);
   }
 }, getRandNum(10) * 1000);
@@ -130,6 +131,7 @@ const sleepinessInterval = setInterval(() => {
     clearInterval(hungerInterval);
     clearInterval(sleepinessInterval);
     clearInterval(ageInterval);
+    document.querySelector("img").classList.remove("move");
     alert(`${tambo.name} has passed away due to your negligence`);
   }
 }, getRandNum(10) * 1000);
@@ -142,6 +144,7 @@ const boredomInterval = setInterval(() => {
     clearInterval(hungerInterval);
     clearInterval(sleepinessInterval);
     clearInterval(ageInterval);
+    document.querySelector("img").classList.remove("move");
     alert(`${tambo.name} has passed away due to your negligence`);
   }
 }, getRandNum(10) * 1000);

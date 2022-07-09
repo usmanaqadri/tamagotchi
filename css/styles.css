@@ -21,7 +21,7 @@ body {
     align-items: center;
 }
 
-#move {
+.move {
     position:relative;
     animation: backandforth 3s ease 0s;
     animation-iteration-count:infinite;
