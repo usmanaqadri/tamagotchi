@@ -120,7 +120,7 @@ const hungerInterval = setInterval(() => {
     document.querySelector("img").classList.remove("move");
     alert(`${tambo.name} has passed away due to your negligence`);
   }
-}, getRandNum(10) * 1000);
+}, getRandNum(10) * 1000 * getRandNum(5));
 const sleepinessInterval = setInterval(() => {
   tambo.sleepiness++;
   document.getElementById(
@@ -136,7 +136,7 @@ const sleepinessInterval = setInterval(() => {
     document.querySelector("img").classList.remove("move");
     alert(`${tambo.name} has passed away due to your negligence`);
   }
-}, getRandNum(10) * 1000);
+}, getRandNum(10) * 1000 * getRandNum(5));
 const boredomInterval = setInterval(() => {
   tambo.boredom++;
   document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
@@ -150,4 +150,4 @@ const boredomInterval = setInterval(() => {
     document.querySelector("img").classList.remove("move");
     alert(`${tambo.name} has passed away due to your negligence`);
   }
-}, getRandNum(10) * 1000);
+}, getRandNum(10) * 1000 * getRandNum(5));
