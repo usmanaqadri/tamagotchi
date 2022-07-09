@@ -39,3 +39,24 @@ function rename() {
   document.getElementById("tamagotchi").firstElementChild.textContent =
     tambo.name;
 }
+
+// // UPDATING TAMOGATCHI STATS
+
+const feedBtn = document.getElementById("feed");
+feedBtn.addEventListener("click", () => {
+  tambo.feed();
+  document.getElementById("hunger").textContent = `Hunger: ${tambo.hunger}`;
+  console.log(tambo);
+});
+const sleepBtn = document.getElementById("sleep");
+sleepBtn.addEventListener("click", () => {
+  tambo.lightsOut();
+  document.getElementById(
+    "sleepiness"
+  ).textContent = `Sleepiness: ${tambo.sleepiness}`;
+});
+const playBtn = document.getElementById("play");
+playBtn.addEventListener("click", () => {
+  tambo.play();
+  document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
+});
