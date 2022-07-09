@@ -5,6 +5,7 @@ class Tamagotchi {
     this.sleepiness = 5;
     this.boredom = 5;
     this.age = 0;
+    this.stage = 0;
   }
   feed() {
     this.hunger--;
@@ -103,3 +104,21 @@ setInterval(() => {
   tambo.boredom++;
   document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
 }, getRandNum(10) * 1000);
+
+// // MORPHING PET A CERTAIN AGES
+
+if (tambo.age === 3) {
+  alert(`${tambo.name} is evolving!`);
+  tambo.stage = 1;
+}
+if (tambo.stage === 1) {
+  //do something on the dom to transform how it looks
+}
+
+if (tambo.age === 8) {
+  alert(`${tambo.name} is evolving!`);
+  tambo.stage = 2;
+}
+if (tambo.stage === 2) {
+  //do something on the DOM to transform it
+}
