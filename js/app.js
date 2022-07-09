@@ -94,7 +94,7 @@ const ageInterval = setInterval(() => {
     tambo.stage = 1;
   }
   if (tambo.stage === 1) {
-    //do something on the dom to transform how it looks
+    document.querySelector("img").attributes[1].value = "./assets/form1.png";
   }
 
   if (tambo.age === 8) {
@@ -102,14 +102,15 @@ const ageInterval = setInterval(() => {
     tambo.stage = 2;
   }
   if (tambo.stage === 2) {
-    //do something on the DOM to transform it
+    document.querySelector("img").attributes[1].value = "./assets/form2.png";
   }
 }, getRandNum(3) * 1000 * 60);
 
-// // INCREASING PET'S HUNGER, SLEEPINESS, AND BOREDOM METRICS && KILLING TAMO IF STAT IS EQUAL TO 10
+// // INCREASING PET'S HUNGER, SLEEPINESS, AND BOREDOM METRICS
 const hungerInterval = setInterval(() => {
   tambo.hunger++;
   document.getElementById("hunger").textContent = `Hunger: ${tambo.hunger}`;
+  //   KILLING TAMO IF STAT IS EQUAL TO 10
   if (tambo.hunger === 10) {
     document.getElementById("interactions").remove();
     clearInterval(boredomInterval);
@@ -125,6 +126,7 @@ const sleepinessInterval = setInterval(() => {
   document.getElementById(
     "sleepiness"
   ).textContent = `Sleepiness: ${tambo.sleepiness}`;
+  //   KILLING TAMO IF STAT IS EQUAL TO 10
   if (tambo.sleepiness === 10) {
     document.getElementById("interactions").remove();
     clearInterval(boredomInterval);
@@ -138,6 +140,7 @@ const sleepinessInterval = setInterval(() => {
 const boredomInterval = setInterval(() => {
   tambo.boredom++;
   document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
+  //   KILLING TAMO IF STAT IS EQUAL TO 10
   if (tambo.boredom === 10) {
     document.getElementById("interactions").remove();
     clearInterval(boredomInterval);
