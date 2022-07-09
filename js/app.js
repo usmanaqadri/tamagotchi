@@ -111,6 +111,7 @@ const hungerInterval = setInterval(() => {
   tambo.hunger++;
   document.getElementById("hunger").textContent = `Hunger: ${tambo.hunger}`;
   if (tambo.hunger === 10) {
+    document.getElementById("interactions").remove();
     clearInterval(boredomInterval);
     clearInterval(hungerInterval);
     clearInterval(sleepinessInterval);
@@ -124,6 +125,7 @@ const sleepinessInterval = setInterval(() => {
     "sleepiness"
   ).textContent = `Sleepiness: ${tambo.sleepiness}`;
   if (tambo.sleepiness === 10) {
+    document.getElementById("interactions").remove();
     clearInterval(boredomInterval);
     clearInterval(hungerInterval);
     clearInterval(sleepinessInterval);
@@ -135,6 +137,7 @@ const boredomInterval = setInterval(() => {
   tambo.boredom++;
   document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
   if (tambo.boredom === 10) {
+    document.getElementById("interactions").remove();
     clearInterval(boredomInterval);
     clearInterval(hungerInterval);
     clearInterval(sleepinessInterval);

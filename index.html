@@ -11,7 +11,8 @@
 <body>
     <div id="tamagotchi">
         <h2>Tambo</h2>
-        <img src="./assets/form0.png" width="40px" alt="tamo">
+        <img id="move" src="./assets/form0.png" width="40px" alt="tamo"/>
+        <!-- <img class="animate" src="./assets/form0.png" width="40px" alt="tamo"> -->
         <br>
         <form onsubmit="event.preventDefault();">
             <input type="text" id="renaming" placeholder="rename your pet">
@@ -26,9 +27,9 @@
         <h3 id="boredom">Boredom: </h3>
     </div>
     <br>
-    <div>
+    <div id="interactions">
         <button id="feed">Feed</button>
-        <button id="sleep">Turn of Lights</button>
+        <button id="sleep">Turn off Lights</button>
         <button id="play">Play with Tamo</button>
     </div>
 </body>
