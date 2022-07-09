@@ -6,4 +6,13 @@ class Tamagotchi {
     this.boredom = 5;
     this.age = 0;
   }
+  feed() {
+    this.hunger--;
+  }
+  lightsOut() {
+    this.sleepiness--;
+  }
+  play() {
+    this.boredom--;
+  }
 }
