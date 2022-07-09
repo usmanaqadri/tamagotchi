@@ -19,12 +19,23 @@ class Tamagotchi {
 
 const tambo = new Tamagotchi("Tambo");
 
-const rename = () => {
+// // DISPLAYING INITIAL TAMOGATCHI STATS
+
+document.getElementById("age").textContent += tambo.age;
+document.getElementById("hunger").textContent += tambo.hunger;
+document.getElementById("sleepiness").textContent += tambo.sleepiness;
+document.getElementById("boredom").textContent += tambo.boredom;
+
+// // RENAME TAMOGATCHI
+
+// Grabbing the "Change Name" button and adding event listener
+const renameBtn = document.getElementById("rename");
+renameBtn.addEventListener("click", rename);
+
+// not using arrow functions so that these can stay lumped together in one section. Standard function declarations are hoisted
+function rename() {
   tambo.name = document.querySelector("input").value;
   document.querySelector("input").value = "";
   document.getElementById("tamagotchi").firstElementChild.textContent =
     tambo.name;
-};
-
-const renameBtn = document.querySelector("button");
-renameBtn.addEventListener("click", rename);
+}
