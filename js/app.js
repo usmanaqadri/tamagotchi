@@ -49,15 +49,20 @@ function rename() {
 
 const feedBtn = document.getElementById("feed");
 feedBtn.addEventListener("click", () => {
+  if (tambo.hunger === 0) {
+    return;
+  }
   tambo.feed();
   document.getElementById("hunger").textContent = `Hunger: ${tambo.hunger}`;
-  console.log(tambo);
 });
 
 // Putting pet to sleep
 
 const sleepBtn = document.getElementById("sleep");
 sleepBtn.addEventListener("click", () => {
+  if (tambo.sleepiness === 0) {
+    return;
+  }
   tambo.lightsOut();
   document.getElementById(
     "sleepiness"
@@ -68,14 +73,33 @@ sleepBtn.addEventListener("click", () => {
 
 const playBtn = document.getElementById("play");
 playBtn.addEventListener("click", () => {
+  if (tambo.boredom === 0) {
+    return;
+  }
   tambo.play();
   document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
 });
 
 // // INCREASING PET'S AGE EVERY X MINUTES
 
-const getRandNum = () => Math.floor(Math.random() * 10) + 1;
+const getRandNum = (target) => Math.floor(Math.random() * target) + 1;
 setInterval(() => {
   tambo.getOlder();
   document.getElementById("age").textContent = `Age: ${tambo.age}`;
-}, getRandNum() * 1000);
+}, getRandNum(3) * 1000 * 60);
+
+// // INCREASING PET'S HUNGER, SLEEPINESS, AND BOREDOM METRICS
+setInterval(() => {
+  tambo.hunger++;
+  document.getElementById("hunger").textContent = `Hunger: ${tambo.hunger}`;
+}, getRandNum(10) * 1000);
+setInterval(() => {
+  tambo.sleepiness++;
+  document.getElementById(
+    "sleepiness"
+  ).textContent = `Sleepiness: ${tambo.sleepiness}`;
+}, getRandNum(10) * 1000);
+setInterval(() => {
+  tambo.boredom++;
+  document.getElementById("boredom").textContent = `Boredom: ${tambo.boredom}`;
+}, getRandNum(10) * 1000);
